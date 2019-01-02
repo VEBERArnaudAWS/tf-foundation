@@ -22,8 +22,8 @@ script:
 
 deploy:
   skip_cleanup: true
-  deploy:
-    provider: script
-    script: terraform apply -input=false .terraform/tfplan
-    on:
-      branch: master
+  provider: script
+  script:
+    - terraform apply -input=false .terraform/tfplan
+  on:
+    branch: master
