@@ -3,19 +3,20 @@ language: generic
 env:
   global:
     - TERRAFORM_VERSION=0.11.11
-    - TERRAFORM_BIN=/tmp/terraform
+    - TERRAFORM_PATH=$HOME/bin
 
 before_install:
+  - echo "${PATH}"
   - wget "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" -O /tmp/terraform.zip
 
 install:
-  - unzip -d $(dirname "${TERRAFORM_BIN}") /tmp/terraform.zip
+  - unzip -d "${TERRAFORM_PATH}" /tmp/terraform.zip
 
 before_script:
-  - "${TERRAFORM_BIN}" init -input=false
-  - "${TERRAFORM_BIN}" workspace select prd
+  - terraform init -input=false
+  - terraform workspace select prd
 
 script:
-  - "${TERRAFORM_BIN}" validate
-  - "${TERRAFORM_BIN}" fmt -check=true -diff
-  - "${TERRAFORM_BIN}" plan -input=false -out=.terraform/tfplan
+  - terraform validate
+  - terraform fmt -check=true -diff
+  - terraform plan -input=false -out=.terraform/tfplan
