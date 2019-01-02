@@ -26,3 +26,5 @@ deploy:
     provider: script
     script:
       - terraform apply -input=false .terraform/tfplan
+    on:
+      branch: feat/travis-deployment
