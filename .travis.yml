@@ -6,7 +6,6 @@ env:
     - TERRAFORM_PATH=$HOME/bin
 
 before_install:
-  - echo "${PATH}"
   - wget "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" -O /tmp/terraform.zip
 
 install:
@@ -20,3 +19,12 @@ script:
   - terraform validate
   - terraform fmt -check=true -diff
   - terraform plan -input=false -out=.terraform/tfplan
+
+deploy:
+  skip_cleanup: true
+  deploy:
+    provider: script
+    script:
+      - terraform apply -input=false .terraform/tfplan
+    on:
+      branch: master
