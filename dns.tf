@@ -1,6 +1,8 @@
 # haiiku.com
 module "haiiku_com-zones" {
-  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.1"
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
 
   domain               = "haiiku.com"
   env_names            = "${var.env_names}"
@@ -9,7 +11,9 @@ module "haiiku_com-zones" {
 
 # haiiku.io
 module "haiiku_io-zones" {
-  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.1"
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
 
   domain               = "haiiku.io"
   env_names            = "${var.env_names}"
@@ -18,7 +22,9 @@ module "haiiku_io-zones" {
 
 # lapiere.pw
 module "lapiere_pw-zones" {
-  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.1"
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
 
   domain               = "lapiere.pw"
   env_names            = "${var.env_names}"
@@ -27,7 +33,9 @@ module "lapiere_pw-zones" {
 
 # unikorp.io
 module "unikorp_io-zones" {
-  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.1"
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
 
   domain               = "unikorp.io"
   env_names            = "${var.env_names}"
@@ -36,7 +44,9 @@ module "unikorp_io-zones" {
 
 # veber.cloud
 module "veber_cloud-zones" {
-  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.1"
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
 
   domain               = "veber.cloud"
   env_names            = "${var.env_names}"
@@ -45,7 +55,9 @@ module "veber_cloud-zones" {
 
 # veber.pw
 module "veber_pw-zones" {
-  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.1"
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
 
   domain               = "veber.pw"
   env_names            = "${var.env_names}"
@@ -54,7 +66,9 @@ module "veber_pw-zones" {
 
 # veber.io
 module "veber_io-zones" {
-  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.1"
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
 
   domain               = "veber.io"
   env_names            = "${var.env_names}"
