@@ -3,7 +3,9 @@ data "aws_iam_policy" "administrator_access" {
 }
 
 module "owner" {
-  source = "github.com/VEBERArnaudAWS/tf_module-group?ref=v0.0.1-alpha.1"
+  source = "github.com/VEBERArnaudAWS/tf_module-group?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
 
   name = "Owner"
 
@@ -15,7 +17,9 @@ module "owner" {
 }
 
 module "deploy_tf-group" {
-  source = "github.com/VEBERArnaudAWS/tf_module-group?ref=v0.0.1-alpha.1"
+  source = "github.com/VEBERArnaudAWS/tf_module-group?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
 
   name = "deploy-tf"
 
