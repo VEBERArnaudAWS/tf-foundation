@@ -1,3 +1,25 @@
+# grantueismo.world
+module "granturismo_world-zones" {
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
+
+  domain               = "granturismo.world"
+  env_names            = "${var.env_names}"
+  env_dns_zones_prefix = "${var.env_dns_zones_prefix}"
+}
+
+# gran-turismo.world
+module "gran-turismo_world-zones" {
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
+
+  domain               = "gran-turismo.world"
+  env_names            = "${var.env_names}"
+  env_dns_zones_prefix = "${var.env_dns_zones_prefix}"
+}
+
 # haiiku.com
 module "haiiku_com-zones" {
   source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
