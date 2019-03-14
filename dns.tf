@@ -64,6 +64,39 @@ module "lapiere_pw-zones" {
   env_dns_zones_prefix = "${var.env_dns_zones_prefix}"
 }
 
+# theguywiththebluehoodie.com
+module "theguywiththebluehoodie_com-zones" {
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
+
+  domain               = "theguywiththebluehoodie.com"
+  env_names            = "${var.env_names}"
+  env_dns_zones_prefix = "${var.env_dns_zones_prefix}"
+}
+
+# theguywiththebluehoodie.fr
+module "theguywiththebluehoodie_fr-zones" {
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
+
+  domain               = "theguywiththebluehoodie.fr"
+  env_names            = "${var.env_names}"
+  env_dns_zones_prefix = "${var.env_dns_zones_prefix}"
+}
+
+# theguywiththebluehoodie.net
+module "theguywiththebluehoodie_net-zones" {
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
+
+  domain               = "theguywiththebluehoodie.net"
+  env_names            = "${var.env_names}"
+  env_dns_zones_prefix = "${var.env_dns_zones_prefix}"
+}
+
 # unikorp.io
 module "unikorp_io-zones" {
   source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
