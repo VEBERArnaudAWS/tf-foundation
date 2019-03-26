@@ -9,6 +9,17 @@ module "awsworkshop_paris-zones" {
   env_dns_zones_prefix = "${var.env_dns_zones_prefix}"
 }
 
+# duck-invaders.fr
+module "duck-invaders_fr-zones" {
+  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
+
+  bypass = "${terraform.workspace != "prd" ? "true" : "false"}"
+
+  domain               = "duck-invaders.fr"
+  env_names            = "${var.env_names}"
+  env_dns_zones_prefix = "${var.env_dns_zones_prefix}"
+}
+
 # grantueismo.world
 module "granturismo_world-zones" {
   source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.1-alpha.2"
