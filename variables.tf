@@ -1,23 +1,23 @@
 variable "encoded_pgp_public_key" {
-  type = "string"
+  type = string
 
   default = "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"
 }
 
 variable "env_names" {
-  type = "map"
+  type = object({ stg = string, prd = string })
 
   default = {
-    "stg" = "staging"
-    "prd" = "prod"
+    stg = "staging"
+    prd = "prod"
   }
 }
 
 variable "env_dns_zones_prefix" {
-  type = "map"
+  type = object({ stg = string, prd = string })
 
   default = {
-    "stg" = "staging."
-    "prd" = ""
+    stg = "staging."
+    prd = ""
   }
 }
