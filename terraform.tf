@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 0.11.13"
+  required_version = "~> 0.12.0"
 
   backend "s3" {
     key = "tf-foundation"
@@ -14,5 +14,5 @@ provider "aws" {
 
   region = "us-east-1"
 
-  version = "~> 1.54"
+  version = "~> 2.25"
 }
