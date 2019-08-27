@@ -1,5 +1,5 @@
 resource "aws_iam_account_password_policy" "main" {
-  count = "${terraform.workspace == "prd" ? 1 : 0}"
+  count = terraform.workspace == "prd" ? 1 : 0
 
   minimum_password_length        = 20
   require_lowercase_characters   = true
