@@ -1,14 +1,3 @@
-# awsworkshop.paris
-module "awsworkshop_paris-zones" {
-  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.2-alpha.5"
-
-  bypass = terraform.workspace != "prd" ? true : false
-
-  domain               = "awsworkshop.paris"
-  env_names            = var.env_names
-  env_dns_zones_prefix = var.env_dns_zones_prefix
-}
-
 # haiiku.com
 module "haiiku_com-zones" {
   source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.2-alpha.5"
