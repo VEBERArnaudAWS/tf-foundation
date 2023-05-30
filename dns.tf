@@ -9,28 +9,6 @@ module "awsworkshop_paris-zones" {
   env_dns_zones_prefix = var.env_dns_zones_prefix
 }
 
-# grantueismo.world
-module "granturismo_world-zones" {
-  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.2-alpha.5"
-
-  bypass = terraform.workspace != "prd" ? true : false
-
-  domain               = "granturismo.world"
-  env_names            = var.env_names
-  env_dns_zones_prefix = var.env_dns_zones_prefix
-}
-
-# gran-turismo.world
-module "gran-turismo_world-zones" {
-  source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.2-alpha.5"
-
-  bypass = terraform.workspace != "prd" ? true : false
-
-  domain               = "gran-turismo.world"
-  env_names            = var.env_names
-  env_dns_zones_prefix = var.env_dns_zones_prefix
-}
-
 # haiiku.com
 module "haiiku_com-zones" {
   source = "github.com/VEBERArnaudAWS/tf_module-dns_zones?ref=v0.0.2-alpha.5"
